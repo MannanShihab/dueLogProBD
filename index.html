@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duelog | Professional Digital Ledger for Shops</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        .glass-effect { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); }
+        .gradient-indigo { background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900" x-data="{ mobileMenu: false, activeTab: 'all' }">
+
+    <nav class="glass-effect border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="bg-indigo-600 text-white w-10 h-10 rounded-xl flex items-center justify-center font-black text-xl shadow-lg shadow-indigo-200">D</div>
+                <span class="text-xl font-extrabold tracking-tight">DUE<span class="text-indigo-600">LOG</span></span>
+            </div>
+
+            <div class="hidden md:flex gap-8 items-center font-bold text-sm text-slate-600">
+                <a href="#features" class="hover:text-indigo-600 transition">Features</a>
+                <a href="#how-it-works" class="hover:text-indigo-600 transition">How it Works</a>
+                <a href="#preview" class="hover:text-indigo-600 transition">Live Preview</a>
+                <button class="bg-indigo-600 text-white px-6 py-2.5 rounded-full hover:bg-indigo-700 transition shadow-md">Shop Login</button>
+            </div>
+
+            <button class="md:hidden text-slate-600 text-2xl" @click="mobileMenu = !mobileMenu">
+                <i class="fas" :class="mobileMenu ? 'fa-times' : 'fa-bars'"></i>
+            </button>
+        </div>
+
+        <div x-show="mobileMenu" x-transition class="md:hidden bg-white border-b border-slate-200 px-6 py-8 space-y-4">
+            <a href="#features" @click="mobileMenu = false" class="block font-bold text-lg text-slate-800">Features</a>
+            <a href="#how-it-works" @click="mobileMenu = false" class="block font-bold text-lg text-slate-800">How it Works</a>
+            <a href="#preview" @click="mobileMenu = false" class="block font-bold text-lg text-slate-800">Live Preview</a>
+            <hr class="border-slate-100">
+            <button class="w-full bg-indigo-600 text-white py-4 rounded-2xl font-bold">Shop Owner Login</button>
+        </div>
+    </nav>
+
+    <header class="pt-16 pb-24 px-6 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-8">
+            <span class="bg-indigo-100 text-indigo-700 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest">
+                Digital Khata for Professionals
+            </span>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 leading-tight">
+                Manage Dues, <br><span class="text-indigo-600 underline decoration-indigo-200">Not Paper.</span>
+            </h1>
+            <p class="text-lg text-slate-600 leading-relaxed max-w-lg">
+                The fastest way for shop owners to track 100+ customers. Log partial payments, monitor daily dues, and never lose a single record again.
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <button class="bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-xl shadow-indigo-200 hover:bg-indigo-700 transition active:scale-95">Get Started Free</button>
+                <button class="bg-white border border-slate-200 text-slate-700 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-slate-50 transition">Watch Demo</button>
+            </div>
+        </div>
+
+        <div class="relative">
+            <div class="gradient-indigo rounded-[3rem] p-8 shadow-3xl transform lg:rotate-3">
+                <div class="bg-white rounded-2xl p-6 shadow-inner space-y-6">
+                    <div class="flex justify-between items-center border-b pb-4">
+                        <h4 class="font-bold text-slate-400 text-xs">DAILY SUMMARY</h4>
+                        <span class="text-xs font-black text-indigo-600">APRIL 2026</span>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex justify-between p-4 bg-rose-50 border-l-4 border-rose-500 rounded-xl">
+                            <span class="font-bold">Rahim Store</span>
+                            <span class="text-rose-600 font-black">৳ 1,250 Due</span>
+                        </div>
+                        <div class="flex justify-between p-4 bg-emerald-50 border-l-4 border-emerald-500 rounded-xl">
+                            <span class="font-bold">Karim Bhai</span>
+                            <span class="text-emerald-600 font-black">৳ 400 Paid</span>
+                        </div>
+                        <div class="flex justify-between p-4 bg-slate-50 border-l-4 border-indigo-500 rounded-xl">
+                            <span class="font-bold">Sagor Hotel</span>
+                            <span class="text-indigo-600 font-black">৳ 8,500 Bal</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl hidden md:block">
+                <p class="text-[10px] font-bold text-slate-400 uppercase">Success Rate</p>
+                <p class="text-xl font-black text-emerald-500">100% Accuracy</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-white py-12 border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div><p class="text-3xl font-black text-indigo-600 uppercase leading-none">100+</p><p class="text-[10px] font-bold text-slate-400 mt-2 uppercase tracking-widest">Customers/Shop</p></div>
+            <div><p class="text-3xl font-black text-indigo-600 uppercase leading-none">৳ 0</p><p class="text-[10px] font-bold text-slate-400 mt-2 uppercase tracking-widest">Math Errors</p></div>
+            <div><p class="text-3xl font-black text-indigo-600 uppercase leading-none">24/7</p><p class="text-[10px] font-bold text-slate-400 mt-2 uppercase tracking-widest">Live Cloud Access</p></div>
+            <div><p class="text-3xl font-black text-indigo-600 uppercase leading-none">SECURE</p><p class="text-[10px] font-bold text-slate-400 mt-2 uppercase tracking-widest">Data Privacy</p></div>
+        </div>
+    </section>
+
+    <section id="features" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16 space-y-4">
+            <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900">Why Choose Duelog?</h2>
+            <p class="text-slate-500 max-w-xl mx-auto">Everything you need to track small debts and partial payments in one professional place.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all group">
+                <div class="w-14 h-14 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-indigo-600 group-hover:text-white transition">
+                    <i class="fas fa-search text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Instant Search</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Instantly find any customer among 100+ profiles by searching their name or mobile number.</p>
+            </div>
+            <div class="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all group">
+                <div class="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-emerald-600 group-hover:text-white transition">
+                    <i class="fas fa-calculator text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Partial Pay Logic</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Automatically subtract partial payments from the total bill. See "What was" vs "What is" instantly.</p>
+            </div>
+            <div class="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all group">
+                <div class="w-14 h-14 bg-rose-50 text-rose-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-rose-600 group-hover:text-white transition">
+                    <i class="fas fa-history text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Full History</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Detailed logs of every transaction. Never argue with a customer again about "when they paid."</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="preview" class="bg-slate-900 py-24 px-6 overflow-hidden rounded-t-[4rem]">
+        <div class="max-w-4xl mx-auto text-center mb-16 space-y-4">
+            <h2 class="text-3xl md:text-5xl font-extrabold text-white">Interactive Ledger</h2>
+            <p class="text-slate-400">See how easy it is to manage your 100+ customers.</p>
+        </div>
+
+        <div class="max-w-md mx-auto bg-slate-800 rounded-[2.5rem] p-4 shadow-2xl border border-white/10">
+            <div class="bg-slate-900 rounded-2xl p-6 min-h-[400px]">
+                <div class="bg-slate-800 p-3 rounded-xl flex items-center gap-3 text-slate-500 mb-6">
+                    <i class="fas fa-search"></i>
+                    <span class="text-xs">Search customers...</span>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center p-4 bg-white/5 rounded-2xl border border-white/5">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-indigo-500 rounded-xl flex items-center justify-center font-bold text-white">MA</div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Mohammad Ali</h4>
+                                <p class="text-[10px] text-slate-400">Paid ৳200 Today</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-sm font-black text-white">৳ 1,450</p>
+                            <p class="text-[9px] text-slate-500 line-through">৳ 1,650</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center p-4 bg-white/5 rounded-2xl border border-white/5 opacity-60">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-slate-700 rounded-xl flex items-center justify-center font-bold text-white">KB</div>
+                            <div><h4 class="text-sm font-bold text-white">Karim Bhai</h4><p class="text-[10px] text-slate-400">3 Days Ago</p></div>
+                        </div>
+                        <p class="text-sm font-black text-white">৳ 620</p>
+                    </div>
+                </div>
+
+                <div class="flex justify-center mt-12">
+                    <button class="bg-indigo-600 text-white px-8 py-3 rounded-full font-bold shadow-lg shadow-indigo-500/20">
+                        + New Entry
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 border-t border-white/5 py-12 px-6 text-center">
+        <div class="flex justify-center items-center gap-2 mb-6">
+            <div class="bg-white text-slate-900 w-8 h-8 rounded-lg flex items-center justify-center font-black">D</div>
+            <span class="text-white font-extrabold tracking-tight">DUE<span class="text-indigo-400">LOG</span></span>
+        </div>
+        <p class="text-slate-500 text-xs font-bold uppercase tracking-[0.2em] mb-4">The Professional Choice for Local Businesses</p>
+        <p class="text-slate-600 text-[10px]">&copy; 2026 DUELOG.PRO.BD &bull; Built with Laravel & Livewire Technology</p>
+    </footer>
+
+</body>
+</html>
